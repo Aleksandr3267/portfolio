@@ -1,0 +1,104 @@
+.experience {
+  padding: var(--sp-16) 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.experience h2 {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--sp-6);
+}
+
+.exp-list {
+  position: relative;
+  background: rgba(255, 255, 255, 0.78);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(219, 223, 221, 0.9);
+  border-radius: var(--radius);
+}
+
+.exp-row {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-4) var(--sp-4) calc(var(--sp-4) + 12px);
+  position: relative;
+}
+
+.exp-row + .exp-row {
+  border-top: 1px solid var(--color-line);
+}
+
+.exp-meta h3 { font-size: var(--fs-md); }
+
+.exp-meta p {
+  margin-top: 4px;
+  font-size: var(--fs-sm);
+  color: var(--color-ink-muted);
+}
+
+.exp-meta .mono {
+  display: block;
+  margin-top: var(--sp-1);
+  font-size: 13px;
+  color: var(--color-accent);
+}
+
+.exp-text {
+  font-size: var(--fs-sm);
+  line-height: 1.65;
+  color: var(--color-ink-muted);
+}
+
+.exp-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  margin-top: var(--sp-4);
+}
+
+@media (max-width: 720px) {
+  .exp-row { grid-template-columns: 1fr; gap: var(--sp-2); }
+}
+
+.exp-rail {
+  position: absolute;
+  left: 16px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--color-line);
+}
+
+.exp-rail i {
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent);
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.exp-row::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 38px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 1px solid var(--color-line);
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.exp-row.is-active::before {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(90, 70, 255, 0.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exp-rail i { transform: none; }
+  .exp-row::before { background: var(--color-accent); border-color: var(--color-accent); }
+}

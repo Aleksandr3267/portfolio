@@ -1,0 +1,76 @@
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;             
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  overflow: hidden;
+  
+  box-shadow: 0 1px 0 var(--color-line), 0 28px 60px rgba(18, 24, 31, 0.08);
+}
+
+
+.preloader-nav {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.preloader-logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-md);
+}
+
+.preloader-count {
+  font-size: var(--fs-sm);
+  color: var(--color-accent);
+  border: 1px solid var(--color-line);
+  padding: 6px 10px;
+  border-radius: var(--radius);
+}
+
+.preloader-track {
+  position: relative;
+  height: 1px;
+  background: var(--color-line);
+}
+
+.preloader-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -0.5px;
+  height: 2px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.preloader-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.preloader-word {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 8.5vw, 8.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.preloader-word .bang { color: var(--color-accent); }
+
+
+.pre-char-mask {
+  padding: 0.08em 0 0.22em;
+  margin: -0.08em 0 -0.22em;
+}

@@ -1,0 +1,38 @@
+:root {
+  /* Color */
+  --color-bg: #f2f4f3;
+  --color-surface: #ffffff;
+  --color-ink: #12181f;
+  --color-ink-muted: #46505c;
+  --color-line: #dbdfdd;
+  --color-accent: #5a46ff;
+  --color-accent-ink: #ffffff;
+  --color-highlight: #d9f04b;
+
+  /* Type */
+  --font-display: "Sora", sans-serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  /* Type scale — a small fixed set of sizes; every font-size in the project picks from it */
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.25rem;
+  --fs-lg: 1.75rem;
+  --fs-xl: 2.5rem;
+  --fs-2xl: 3.75rem;
+
+  /* Spacing scale — 8px base unit */
+  --sp-1: 8px;
+  --sp-2: 16px;
+  --sp-3: 24px;
+  --sp-4: 32px;
+  --sp-6: 48px;
+  --sp-8: 64px;
+  --sp-12: 96px;
+  --sp-16: 128px;
+
+  /* Layout */
+  --maxw: 1240px;
+  --radius: 3px;
+}
