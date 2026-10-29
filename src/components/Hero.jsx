@@ -43,7 +43,7 @@ export default function Hero() {
           <p className="hero-lede">
             <span>{t.hero.lede}</span>
           </p>
-          <a href="#projects" className="hero-cta btn-primary">
+          <a href="#projects" className="hero-cta btn-primary" data-umami-event="click_hero_cta">
             {t.hero.cta}
           </a>
         </div>

@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLanguage } from '../content/LanguageContext.jsx';
 import './Nav.css';
+import { track } from '../analytics';
 
 const SECTIONS = ['projects', 'experience', 'about', 'contact'];
 
@@ -58,7 +59,7 @@ export default function Nav() {
         <nav className="nav-links">{links}</nav>
 
         <div className="nav-right">
-          <button className="lang-toggle mono" onClick={toggleLang} aria-label="Switch language">
+          <button className="lang-toggle mono" onClick={() => { track('lang_switch', { to: lang === 'en' ? 'ru' : 'en' }); toggleLang(); }} aria-label="Switch language">
             <span className={lang === 'en' ? 'active' : ''}>EN</span>
             <span className="divider">/</span>
             <span className={lang === 'ru' ? 'active' : ''}>RU</span>

@@ -114,7 +114,14 @@ export default function Projects() {
             {project.links?.length > 0 && (
               <div className="project-links">
                 {project.links.map((l) => (
-                  <a key={l.href} href={l.href} target="_blank" rel="noreferrer">
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    data-umami-event="project_link"
+                    data-umami-event-project={project.id}
+                  >
                     {l.label}
                   </a>
                 ))}

@@ -9,10 +9,10 @@ export default function Contact() {
   const rootRef = useScrollReveal('.contact-reveal', [t], 'rise');
 
   const links = [
-    { label: 'Telegram', href: CONTACTS.telegram },
-    { label: 'GitHub', href: CONTACTS.github },
-    { label: t.contact.resume, href: CONTACTS.hh },
-    { label: t.contact.cv, href: t.contact.cv ? CONTACTS.cvPdf : null },
+    { label: 'Telegram', href: CONTACTS.telegram, event: 'click_telegram' },
+    { label: 'GitHub', href: CONTACTS.github, event: 'click_github' },
+    { label: t.contact.resume, href: CONTACTS.hh, event: 'click_hh' },
+    { label: t.contact.cv, href: t.contact.cv ? CONTACTS.cvPdf : null, event: 'click_cv' },
   ].filter((l) => l.href);
 
   return (
@@ -24,7 +24,7 @@ export default function Contact() {
         </p>
 
         <div className="contact-reveal contact-links">
-          <a href={`mailto:${CONTACTS.email}`} className="btn-primary">
+          <a href={`mailto:${CONTACTS.email}`} className="btn-primary" data-umami-event="click_email" data-umami-event-from="contact">
             {t.contact.cta}
           </a>
           {links.map((l) => (
@@ -34,6 +34,8 @@ export default function Contact() {
               target="_blank"
               rel="noreferrer"
               className="contact-secondary-link"
+              data-umami-event={l.event}
+              data-umami-event-from="contact"
             >
               {l.label}
             </a>

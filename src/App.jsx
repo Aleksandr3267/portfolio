@@ -7,9 +7,15 @@ import Projects from './components/Projects.jsx';
 import Experience from './components/Experience.jsx';
 import About from './components/About.jsx';
 import Contact from './components/Contact.jsx';
+import { useEffect } from 'react';
+import { trackSections } from './analytics';
 
 function App() {
-  
+  useEffect(
+    () => trackSections(['top', 'projects', 'experience', 'about', 'contact']),
+    []
+  );
+
   useStageScroll();
 
   return (

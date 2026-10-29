@@ -82,12 +82,12 @@ export default function Experience() {
         {hasActions && (
           <div className="exp-actions">
             {t.experience.cv && CONTACTS.cvPdf && (
-              <a href={CONTACTS.cvPdf} download className="btn-primary">
+              <a href={CONTACTS.cvPdf} download className="btn-primary" data-umami-event="click_cv" data-umami-event-from="experience">
                 {t.experience.cv}
               </a>
             )}
             {CONTACTS.hh && (
-              <a href={CONTACTS.hh} target="_blank" rel="noreferrer" className="contact-secondary-link">
+              <a href={CONTACTS.hh} target="_blank" rel="noreferrer" className="contact-secondary-link" data-umami-event="click_hh" data-umami-event-from="experience">
                 {t.experience.hh}
               </a>
             )}
